@@ -8,12 +8,22 @@
     "unit": "jest"
   },
   "dependencies": {
+    "@tds/core-box": "^2.3.4",
+    "@tds/core-card": "^2.5.1",
+    "@tds/core-display-heading": "^3.0.9",
+    "@tds/core-flex-grid": "^4.0.2",
     "@tds/core-heading": "^3.0.8",
+    "@tds/core-image": "^2.0.25",
+    "@tds/core-price-lockup": "^2.3.2",
+    "@tds/core-text": "^3.1.5",
+    "@tds/core-unordered-list": "^3.0.30",
     "enzyme": "^3.11.0",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

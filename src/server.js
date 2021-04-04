@@ -1,8 +1,6 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-var cors = require('cors');
-const bodyParser = require('body-parser');
 var PORT = 8081;
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests

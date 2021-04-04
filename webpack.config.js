@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/client.jsx',
+  entry: ['@babel/polyfill', './src/client.jsx'],
   devServer: {
     contentBase: './dist',
   },
@@ -14,6 +14,9 @@ module.exports = {
       template: './public/index.html'
     })
   ],
+  devServer: {
+    historyApiFallback: true
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -26,6 +29,10 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.(gif|svg|jpg|png)$/,
+        loader: "file-loader"
       },
       {
         test: /\.css$/,

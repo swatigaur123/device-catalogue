@@ -1,7 +1,15 @@
 {
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
-  ]
+  "presets": [[
+    "@babel/preset-env", {
+      "useBuiltIns": "entry"
+    }],
+    "@babel/preset-react"],
+    //Regenerator is not defined in async-https://github.com/babel/babel/issues/8829
+    "plugins": [
+      ["@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
+    ]
 }
-

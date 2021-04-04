@@ -8,152 +8,29 @@ import Box from '@tds/core-box'
 import Text from '@tds/core-text'
 import Image from '@tds/core-image'
 import {Link} from 'react-router-dom'
-// import iphone from '../../../../public/images/iphone.jpg'
+
 
 
 
 
 const Nav = () => 
-<nav style= {navStyle}>
-<h3>Device Catalog</h3>
-<ul style= {navLinks}>
-  <Link to='/iphones'><li>Iphones</li></Link>
-  <Link to='/watches'><li>Watches</li></Link>
-</ul>
+<nav className="headerNav" style= {navStyle}>
+<Heading level="h3">Device Catalogue</Heading>
+<UnorderedList>
+  <UnorderedList.Item ><Link to='/iphones' className="iphoneLink">Iphones</Link></UnorderedList.Item>
+  <UnorderedList.Item ><Link to='/watches' className='watchLink'>Watches</Link></UnorderedList.Item>
+</UnorderedList>
 </nav>
 
 const navStyle = {
   display: "flex",
-  backgroundColor: "red",
   justifyContent: "space-around",
   alignItems: "center",
   minHeight: "100px",
-  background: "grey",
+  background: "#D8D8D8",
   color: "white",
 
 }
-const navLinks = {
-  listStyle: "none",
-  width: "40%",
-  display: "flex",
-  justifyContent: "space-around",
-  alignItems: "center"
-}
-// export default Nav;
 
-// const Nav = () => 
-// <Nav>
-// <Heading level="h1">Device Catalogue</Heading>
-// <FlexGrid>
-//   <FlexGrid.Row>
-//     <FlexGrid.Col xs={12} md={9} xl={5}>
-//       <Card variant="defaultWithBorder"
-//        fullBleedImage={{
-//         //src: {iphone},
-//         width: 398,
-//         height: 147,
-//         alt: 'salal branch image',
-//         position: 'bottom',
-//       }}>
-//         <Box between={3}>
-//           <Heading level="h3">Internet 15 - Special Offer</Heading>
-//           <FlexGrid>
-//             <FlexGrid.Row verticalAlign="bottom" horizontalAlign="start">
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   topText="Starting at"
-//                   size="medium"
-//                   price="25"
-//                   signDirection="left"
-//                   rateText="/month"
-//                   a11yText="25 dollars per month"
-//                 />
-//               </FlexGrid.Col>
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   size="small"
-//                   strikethrough
-//                   a11yText="was 50 dollars per month"
-//                   price="50"
-//                   signDirection="left"
-//                   rateText="/month"
-//                 />
-//               </FlexGrid.Col>
-//             </FlexGrid.Row>
-//           </FlexGrid>
-//           <Text size="medium">Good for basic browsing, and posting to social media.</Text>
-//           {/* <ChevronLink href="#">Learn more</ChevronLink> */}
-//         </Box>
-//       </Card>
-//     </FlexGrid.Col>
-//     <FlexGrid.Col xs={12} md={9} xl={5}>
-//       <Card variant="defaultWithBorder">
-//         <Box between={3}>
-//           <Heading level="h3">Internet 15 - Special Offer</Heading>
-//           <FlexGrid>
-//             <FlexGrid.Row verticalAlign="bottom" horizontalAlign="start">
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   topText="Starting at"
-//                   size="medium"
-//                   price="25"
-//                   signDirection="left"
-//                   rateText="/month"
-//                   a11yText="25 dollars per month"
-//                 />
-//               </FlexGrid.Col>
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   size="small"
-//                   strikethrough
-//                   a11yText="was 50 dollars per month"
-//                   price="50"
-//                   signDirection="left"
-//                   rateText="/month"
-//                 />
-//               </FlexGrid.Col>
-//             </FlexGrid.Row>
-//           </FlexGrid>
-//           <Text size="medium">Good for basic browsing, and posting to social media.</Text>
-//           {/* <ChevronLink href="#">Learn more</ChevronLink> */}
-//         </Box>
-//       </Card>
-//     </FlexGrid.Col>
-//     <FlexGrid.Col xs={12} md={9} xl={5}>
-//       <Card variant="defaultWithBorder">
-//         <Box between={3}>
-//           <Heading level="h3">Internet 15 - Special Offer</Heading>
-//           <FlexGrid>
-//             <FlexGrid.Row verticalAlign="bottom" horizontalAlign="start">
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   topText="Starting at"
-//                   size="medium"
-//                   price="25"
-//                   signDirection="left"
-//                   rateText="/month"
-//                   a11yText="25 dollars per month"
-//                 />
-//               </FlexGrid.Col>
-//               <FlexGrid.Col xs={12} md={5}>
-//                 <PriceLockup
-//                   size="small"
-//                   strikethrough
-//                   a11yText="was 50 dollars per month"
-//                   price="50"
-//                   signDirection="left"
-//                   rateText="/month"
-//                 />
-//               </FlexGrid.Col>
-//             </FlexGrid.Row>
-//           </FlexGrid>
-//           <Text size="medium">Good for basic browsing, and posting to social media.</Text>
-//           {/* <ChevronLink href="#">Learn more</ChevronLink> */}
-//         </Box>
-//       </Card>
-//     </FlexGrid.Col>
-//   </FlexGrid.Row>
-// </FlexGrid>
-// </Nav>
 
 export default Nav;

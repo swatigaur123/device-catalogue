@@ -9,6 +9,7 @@ import HairlineDivider from '@tds/core-hairline-divider'
 import { FootnoteLink } from '@tds/core-terms-and-conditions'
 import Strong from '@tds/core-strong'
 import Paragraph from '@tds/core-paragraph'
+import Spinner from '@tds/core-spinner'
 
 
 export default class Iphones extends Component {
@@ -27,7 +28,7 @@ export default class Iphones extends Component {
             const result= await response.json();
             console.log("result",result.data);
             let mainContent = result.data.map((item) => (        
-                 <FlexGrid.Col xs={12} md={3}>
+                 <FlexGrid.Col xs={12} md={3} className="iphonesGrid">
                     <Card fullHeight variant="defaultWithBorder"
                     fullBleedImage={{
                         src: '../../../../public/images/iphone.jpg',
@@ -92,7 +93,7 @@ export default class Iphones extends Component {
              : (<div className="iphone-list"> 
                     <React.Fragment>
                          <FlexGrid>
-                               <FlexGrid.Row>
+                               <FlexGrid.Row class ="iphoneGrid">
                                   {this.state.iphoneData }
                                 </FlexGrid.Row>
                             </FlexGrid> 

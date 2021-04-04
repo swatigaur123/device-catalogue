@@ -5,7 +5,6 @@ import Nav from '../Nav';
 import Watches from '../Watches';
 import Iphones from '../Iphones/index';
 import NotFound from '../NotFound';
-import './index.css';
 
 const App = () => (
   <Router>

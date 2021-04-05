@@ -8,6 +8,7 @@ import HairlineDivider from '@tds/core-hairline-divider'
 import { FootnoteLink } from '@tds/core-terms-and-conditions'
 import Strong from '@tds/core-strong'
 import Paragraph from '@tds/core-paragraph'
+import DimpleDivider from '@tds/core-dimple-divider'
 
 export default class Watches extends Component {
   constructor(props) {
@@ -84,7 +85,7 @@ componentDidMount() {
    
 
 render() {
-    return (<div> { this.state.loading  || !this.state.watchData 
+    return (<div>  <DimpleDivider /> { this.state.loading  || !this.state.watchData 
          ? (<div> loading.. </div>)
          : (<div className="watch-list"> 
                 <React.Fragment>

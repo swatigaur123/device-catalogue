@@ -1,18 +1,19 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from '../Home';
-import Nav from '../Nav';
-import Watches from '../Watches';
-import Iphones from '../Iphones/index';
+import Home from '../Home/home';
+import Watches from '../Watches/watch';
+import Iphones from '../Iphones/iphone';
 import NotFound from '../NotFound';
+import Navs from '../Nav/Navbar';
 
 const App = () => (
   <Router>
     <div className="App">
-      {/* <script src="../Iphones/FetchIphoneData.js"></script> */}
-    <Nav />
+    <Navs />
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Home} >
+        <Home/>
+        </Route>
       <Route  path="/iphones" component={Iphones} />
       <Route path="/watches" component={Watches} />
     </Switch>

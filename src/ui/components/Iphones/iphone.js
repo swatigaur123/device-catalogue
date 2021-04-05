@@ -10,6 +10,7 @@ import { FootnoteLink } from '@tds/core-terms-and-conditions'
 import Strong from '@tds/core-strong'
 import Paragraph from '@tds/core-paragraph'
 import Spinner from '@tds/core-spinner'
+import DimpleDivider from '@tds/core-dimple-divider'
 
 
 export default class Iphones extends Component {
@@ -88,7 +89,7 @@ export default class Iphones extends Component {
        
     
     render() {
-        return (<div> { this.state.loading  || !this.state.iphoneData 
+        return (<div> <DimpleDivider /> { this.state.loading  || !this.state.iphoneData 
              ? (<div> loading.. </div>)
              : (<div className="iphone-list"> 
                     <React.Fragment>

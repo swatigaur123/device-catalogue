@@ -9,6 +9,7 @@ import { FootnoteLink } from '@tds/core-terms-and-conditions'
 import Strong from '@tds/core-strong'
 import Paragraph from '@tds/core-paragraph'
 import DimpleDivider from '@tds/core-dimple-divider'
+import Image from '@tds/core-image'
 
 export default class Watches extends Component {
   constructor(props) {
@@ -27,49 +28,60 @@ export default class Watches extends Component {
         let mainContent = result.data.map((item) => (        
              <FlexGrid.Col>
                 <div className="watch-card">
-                <Card fullHeight variant="defaultWithBorder"
-                fullBleedImage={{
-                    src: '../../../../public/images/watch.jpg',
-                    alt: 'Img is not getting displayed',
-                    position: 'top',
-                }}>
-                <Box between={3}>   
-                    <FlexGrid >
-                        <FlexGrid.Row >
-                            <FlexGrid.Col >
-                                <Paragraph>
-                                    <Text size="medium"> <Strong>{item.brand}</Strong> </Text>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Text size="medium"> {item.name} </Text>
-                                </Paragraph>
-                                <Paragraph>
-                                     <PriceLockup
-                                        size="medium"
-                                        price= {item.price}
-                                        signDirection="left"
-                                        />
-                                </Paragraph>
-                                <HairlineDivider />
-                                <Paragraph> 
-                                    <Text size="medium">TELUS Easy Payment and Bring-It-Back applied. 
-                                        <FootnoteLink number={[3]} onClick={(number, ref) => {}} copy="en" />
-                                        </Text>
-                                </Paragraph>                 
-                                <Paragraph>
-                                    <Text size="medium">Taxes due upfront. </Text>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Text size="medium">Retail price: $1130 </Text>
-                                </Paragraph>
-                            </FlexGrid.Col>
-                         </FlexGrid.Row>
-                     </FlexGrid>             
-                 </Box>
-             </Card>
-             </div>
-        </FlexGrid.Col>       
-        ));
+                <Box inset={3}> 
+                <Card fullHeight variant="defaultWithBorder">
+                <Box between={3}>
+                    <Image
+                        src='../../../../public/images/watch.jpg'
+                        width={200}
+                        height={200}
+                        alt="Resoure not found" ></Image>
+          
+          <FlexGrid >
+                            <FlexGrid.Row >
+                                <FlexGrid.Col >
+                                    <Paragraph>
+                                        <Text size="medium"> <Strong>{item.brand}</Strong> </Text>
+                                    </Paragraph>
+                                    <Box between={3}>
+                                    <Paragraph>
+                                        <Text size="medium"> {item.name} </Text>
+                                    </Paragraph>
+                                   
+                                    <Paragraph>
+                                         <PriceLockup
+                                            size="medium"
+                                            price= {item.price}
+                                            signDirection="left"
+                                            />
+                                    </Paragraph>
+                                    
+                                    <HairlineDivider />
+                                    
+                                   
+                                    <Paragraph> 
+                                        <Text size="medium">TELUS Easy Payment and Bring-It-Back applied. 
+                                            <FootnoteLink number={[3]} onClick={(number, ref) => {}} copy="en" />
+                                            </Text>
+                                    </Paragraph> 
+                                    </Box>                
+                                    <Paragraph>
+                                        <Text size="medium">Taxes due upfront. </Text>
+                                    </Paragraph>
+                                   
+                                    <Paragraph>
+                                        <Text size="medium">Retail price: $1130 </Text>
+                                    </Paragraph>
+                                   
+                                </FlexGrid.Col>
+                             </FlexGrid.Row>
+                         </FlexGrid>             
+                     </Box>
+                 </Card>
+                 </Box>  
+                 </div> 
+            </FlexGrid.Col>    
+            ));
         this.setState(
         {
             watchData: mainContent,

@@ -11,6 +11,7 @@ import Strong from '@tds/core-strong'
 import Paragraph from '@tds/core-paragraph'
 import Spinner from '@tds/core-spinner'
 import DimpleDivider from '@tds/core-dimple-divider'
+import Image from '@tds/core-image'
 
 
 export default class Iphones extends Component {
@@ -30,24 +31,27 @@ export default class Iphones extends Component {
             const result= await response.json();
             console.log("result",result.data);
             let mainContent = result.data.map((item) => (     
-                 <FlexGrid.Col >
-                    <div className="iphone-card">   
-                    <Card fullHeight variant="defaultWithBorder"
-                    fullBleedImage={{
-                        src: '../../../../public/images/iphone.jpg',
-                        alt: 'Img is not getting displayed',
-                        position: 'top',
-                    }}>
-                    <Box between={3}>   
+                 <FlexGrid.Col>
+                    <div className="iphone-card">
+                    <Box inset={3}> 
+                    <Card fullHeight variant="defaultWithBorder">
+                    <Box between={3}>
+                    <Image
+                        src='../../../../public/images/iphone.jpg'
+                        width={200}
+                        height={200}
+                       alt="Resoure not found"></Image>
                         <FlexGrid >
                             <FlexGrid.Row >
                                 <FlexGrid.Col >
                                     <Paragraph>
                                         <Text size="medium"> <Strong>{item.brand}</Strong> </Text>
                                     </Paragraph>
+                                    <Box between={3}>
                                     <Paragraph>
                                         <Text size="medium"> {item.name} </Text>
                                     </Paragraph>
+                                   
                                     <Paragraph>
                                          <PriceLockup
                                             size="medium"
@@ -55,23 +59,30 @@ export default class Iphones extends Component {
                                             signDirection="left"
                                             />
                                     </Paragraph>
+                                    
                                     <HairlineDivider />
+                                    
+                                   
                                     <Paragraph> 
                                         <Text size="medium">TELUS Easy Payment and Bring-It-Back applied. 
                                             <FootnoteLink number={[3]} onClick={(number, ref) => {}} copy="en" />
                                             </Text>
-                                    </Paragraph>                 
+                                    </Paragraph> 
+                                    </Box>                
                                     <Paragraph>
                                         <Text size="medium">Taxes due upfront. </Text>
                                     </Paragraph>
+                                   
                                     <Paragraph>
                                         <Text size="medium">Retail price: $1130 </Text>
                                     </Paragraph>
+                                   
                                 </FlexGrid.Col>
                              </FlexGrid.Row>
                          </FlexGrid>             
                      </Box>
                  </Card>
+                 </Box>  
                  </div> 
             </FlexGrid.Col>    
             ));

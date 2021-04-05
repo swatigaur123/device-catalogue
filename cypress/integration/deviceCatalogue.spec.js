@@ -27,8 +27,12 @@ describe('Device Catalogue Tests', ()=> {
         })
 
         it('Renders the elements correctly for Watches', () => {
-            //the Nav bar should be visible
-            cy.get('.header-nav').should('be.visible')
+           //the Nav bar should be visible
+           cy.get('.nav-bar').should('be.visible')
+
+           //Home Page should be visible
+           cy.get('.home').should('be.visible')
+
             //link for watches should be visible
             cy.get('.watch-link').should('be.visible')
             .then(() => {

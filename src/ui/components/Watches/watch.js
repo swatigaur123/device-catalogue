@@ -105,7 +105,7 @@ componentDidMount() {
 
 render() {
     return (<div>  <DimpleDivider /> { this.state.loading  || !this.state.watchData 
-         ? (<div> loading.. </div>)
+         ? (<div> Fetching the data from the server.loading.. </div>)
          : (<div className="watch-list"> 
                 <React.Fragment>
                      <FlexGrid>

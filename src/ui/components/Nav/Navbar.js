@@ -1,10 +1,14 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar'
+import Heading from '@tds/core-heading';
+import {Link} from 'react-router-dom';
+import './NavBar.css';
 
 const Navs = () => {
     return (
-    <Navbar  bg="primary" variant="dark"    >
-    <Navbar.Brand href="/">Device Catalogue</Navbar.Brand>
+    <Navbar className="nav-bar" bg="primary" variant="dark">
+    <Heading level="h2">Device Catalogue</Heading>
+    <Heading level="h2"><Link to='/'>Home</Link></Heading>
     {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
@@ -28,5 +32,10 @@ const Navs = () => {
     //   </nav>
     );
   }
-   
+
+//   <style lang ="css">
+//       .navBar {
+//           background-color: red;
+//       }
+//   </style>
   export default Navs;

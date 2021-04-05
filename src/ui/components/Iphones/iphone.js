@@ -18,7 +18,8 @@ export default class Iphones extends Component {
         super(props);
         this.state = {
             iphoneData: '',
-            loading: true
+            loading: true,
+        
         }
     }
 
@@ -28,8 +29,9 @@ export default class Iphones extends Component {
             const response= await fetch(apiUrl);
             const result= await response.json();
             console.log("result",result.data);
-            let mainContent = result.data.map((item) => (        
-                 <FlexGrid.Col xs={12} md={3} className="iphonesGrid">
+            let mainContent = result.data.map((item) => (     
+                 <FlexGrid.Col >
+                    <div className="iphone-card">   
                     <Card fullHeight variant="defaultWithBorder"
                     fullBleedImage={{
                         src: '../../../../public/images/iphone.jpg',
@@ -70,7 +72,8 @@ export default class Iphones extends Component {
                          </FlexGrid>             
                      </Box>
                  </Card>
-            </FlexGrid.Col>       
+                 </div> 
+            </FlexGrid.Col>    
             ));
             this.setState(
             {
@@ -79,7 +82,13 @@ export default class Iphones extends Component {
             });
         }
         catch (err) {
-            console.log(err);
+            console.log(err);  
+         
+            this.setState(
+                {
+                    iphoneData: "500 Internal server error "+err,
+                    loading: false
+                });
         } 
     }
     componentDidMount() { 
@@ -90,11 +99,11 @@ export default class Iphones extends Component {
     
     render() {
         return (<div> <DimpleDivider /> { this.state.loading  || !this.state.iphoneData 
-             ? (<div> loading.. </div>)
+             ? (<div> Fetching the data from the server.loading.. </div>)
              : (<div className="iphone-list"> 
                     <React.Fragment>
                          <FlexGrid>
-                               <FlexGrid.Row class ="iphoneGrid">
+                               <FlexGrid.Row >
                                   {this.state.iphoneData }
                                 </FlexGrid.Row>
                             </FlexGrid> 

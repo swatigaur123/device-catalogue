@@ -25,7 +25,8 @@ export default class Watches extends Component {
         const result= await response.json();
         console.log("result",result.data);
         let mainContent = result.data.map((item) => (        
-             <FlexGrid.Col xs={12} md={3}>
+             <FlexGrid.Col>
+                <div className="watch-card">
                 <Card fullHeight variant="defaultWithBorder"
                 fullBleedImage={{
                     src: '../../../../public/images/watch.jpg',
@@ -66,6 +67,7 @@ export default class Watches extends Component {
                      </FlexGrid>             
                  </Box>
              </Card>
+             </div>
         </FlexGrid.Col>       
         ));
         this.setState(
@@ -75,7 +77,12 @@ export default class Watches extends Component {
         });
     }
     catch (err) {
-        console.log(err);
+        console.log(err);        
+        this.setState(
+            {
+                watchData: "500 Internal server error "+err,
+                loading: false
+            });
     } 
 }
 componentDidMount() { 

@@ -1,0 +1,16 @@
+@media (min-width: 1200px) {
+    .home {
+        margin-left: 450px;
+    }
+    .iphone-link, .watch-link {
+        font-size: 30px;
+        margin-left: 290px;
+    }
+}
+.iphone-link, .watch-link {
+    font-size: 30px;
+}
+
+.iphones, .watches {
+    list-style: none;
+}
